@@ -60,7 +60,7 @@ function index() {
 		var out="";
 		for(var i=0;i<data.length;i++) {
 			var d=data[i];
-			var preNext="<a href=# onclick=showall()>[Full Canon]</a> <a href=# onclick=index()>[Content Index]</a> <a target=_self href='"+fileName+"?pg="+(i-1)+"'>[< prev]</a> <a target=_self href='"+fileName+"?pg="+(i+1)+"'>[next >]</a> "+fileName.replace(".html", "");
+			var preNext="<a href=index.html >[Home]</a> <a href=# onclick=showall()>[Full Canon]</a> <a href=# onclick=index()>[Content]</a> <a target=_self href='"+fileName+"?pg="+(i-1)+"'>[< prev]</a> <a target=_self href='"+fileName+"?pg="+(i+1)+"'>[next >]</a> "+fileName.replace(".html", "");
 			out+="<span style='display: none;' id='pg"+i+"'><hr>"+preNext+" - Page: "+i+"<hr>"+d+"</p></span>";
 			
 		}

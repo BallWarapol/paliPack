@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
@@ -6,6 +6,9 @@ note{
 	vertical-align: super;
     font-size: 6pt;
 	}
+body {
+	 font-family: sans;
+}
 </style>
 <script>
 fileName=window.location.pathname.split("/").pop().split("?")[0];
@@ -51,16 +54,16 @@ function index() {
 }
 	window.onload=function() {
 		var body=document.getElementsByTagName("body")[0] ;
-		var data=body.innerHTML.replace(/\n/ig,"").split('<p');
+		var data=body.innerHTML.replace(/\n/ig,"").split('</p>');
 		for (var j=0;j<data.length;j++) {
 			if (data[j].search('ed="M"')>-1) 
 				data[j]+="\n";
 		}
-		data=data.join('<p').split("\n");
+		data=data.join('</p>').split("\n");
 		var out="";
 		for(var i=0;i<data.length;i++) {
 			var d=data[i];
-			var preNext="<a href=# onclick=showall()>[Full Canon]</a> <a href=# onclick=index()>[Content Index]</a> <a target=_self href='"+fileName+"?pg="+(i-1)+"'>[< prev]</a> <a target=_self href='"+fileName+"?pg="+(i+1)+"'>[next >]</a> "+fileName.replace(".html", "");
+			var preNext="<a href=index.html >[Home]</a> <a href=# onclick=showall()>[Full Canon]</a> <a href=# onclick=index()>[Content]</a> <a target=_self href='"+fileName+"?pg="+(i-1)+"'>[< prev]</a> <a target=_self href='"+fileName+"?pg="+(i+1)+"'>[next >]</a> "+fileName.replace(".html", "");
 			out+="<span style='display: none;' id='pg"+i+"'><hr>"+preNext+" - Page: "+i+"<hr>"+d+"</p></span>";
 			
 		}
